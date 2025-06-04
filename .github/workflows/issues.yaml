@@ -7,5 +7,8 @@ jobs:
   log-issue:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ toJSON(github.event) }}"
+      - run: |
+          echo "Created by: ${{ github.event.issue.user.login }}"
+          echo "Issue title: ${{ github.event.issue.title }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
   
